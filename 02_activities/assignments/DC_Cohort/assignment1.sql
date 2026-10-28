@@ -109,7 +109,12 @@ vendor_id field they both have in common, and sorts the result by market_date, t
 Limit to 24 rows of output. */
 --QUERY 7
 
-
+SELECT *
+FROM vendor AS v
+INNER JOIN vendor_booth_assignments AS vba
+ON v.vendor_id = vba.vendor_id
+ORDER BY vba.market_date, v.vendor_name
+LIMIT 24;
 
 
 --END QUERY
