@@ -128,7 +128,11 @@ LIMIT 24;
 at the farmer’s market by counting the vendor booth assignments per vendor_id. */
 --QUERY 8
 
-
+SELECT
+vendor_id,
+COUNT(*) AS booth_rental_count
+FROM vendor_booth_assignments
+GROUP BY vendor_id;
 
 
 --END QUERY
