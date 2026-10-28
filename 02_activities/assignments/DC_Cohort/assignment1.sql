@@ -32,7 +32,10 @@ LIMIT 10;
 Limit to 25 rows of output. */
 --QUERY 3
 
-
+SELECT *
+FROM customer_purchases
+WHERE product_id IN (4, 9)
+LIMIT 25;
 
 
 --END QUERY
