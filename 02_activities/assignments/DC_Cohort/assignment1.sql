@@ -50,7 +50,12 @@ Limit to 25 rows of output.
 */
 --QUERY 4
 
-
+SELECT
+*,
+quantity * cost_per_quantity AS price
+FROM customer_purchases
+WHERE customer_id BETWEEN 8 AND 10
+LIMIT 25;
 
 
 --END QUERY
