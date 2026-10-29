@@ -178,7 +178,9 @@ VALUES(col1,col2,col3,col4,col5)
 */
 --QUERY 10
 
-
+CREATE TEMP TABLE new_vendor AS
+SELECT *
+FROM vendor;
 
 
 --END QUERY
