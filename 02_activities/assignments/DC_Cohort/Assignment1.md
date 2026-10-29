@@ -209,5 +209,9 @@ Consider, for example, concepts of fariness, inequality, social structures, marg
 
 
 ```
-Your thoughts...
+
+The recommended article tells the story of man who, by Western standards, would be considered a Pakistani citize. However, because his mother refused to adopt his father's last name, he could not be included in the database of Pakistani citizens that would give him all the rights and benefits that come with it. This is an example of bias and prejudice implicit in the database that can be used a political weapon to alienate marginalized groups. With the advances in digitalization, AI, and biometrics, this can increasingly impact our society. The public must debate this topic and governments must create legislation to avoid violating human rights. A mechanism of manual review with an acceptable response time must be ensured.
+I personally face one of these issues due to database bias every time I travel abroad with my husband, who is a legal refugee in Canada with a valid travel document. Because his travel document is not an actual passport, despite serving the same purpose when travelling, he must check-in in person at the airport and cannot do so through his phone or digital kiosks. Moreover, even the airline staff's system does not automatically approve his trip. This in-person verification often takes multiple hours, as many employees have never encountered such a case, which can cause him to miss the flight without compensation.
+Often, these biases are not ill-intended but stem from a lack of exposure to diversity. Therefore, teams responsible for creating and managing such databases should include people from diverse backgrounds.
+
 ```
