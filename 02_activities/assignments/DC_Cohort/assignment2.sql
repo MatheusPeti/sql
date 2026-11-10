@@ -23,6 +23,8 @@ Edit the appropriate columns -- you're making two edits -- and the NULL rows wil
 All the other rows will remain the same. */
 --QUERY 1
 
+SELECT product_id, product_name, product_size, product_qty_type
+FROM product;
 
 
 
