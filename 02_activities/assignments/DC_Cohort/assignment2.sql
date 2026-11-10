@@ -26,6 +26,10 @@ All the other rows will remain the same. */
 SELECT product_id, product_name, product_size, product_qty_type
 FROM product;
 
+SELECT
+product_name || ', ' || COALESCE(product_size, '')
+|| ' ('  || COALESCE(product_qty_type, 'unit') || ')' AS product_details
+FROM product;
 
 
 --END QUERY
