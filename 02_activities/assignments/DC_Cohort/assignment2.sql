@@ -169,6 +169,34 @@ HINT: There are a possibly a few ways to do this query, but if you're struggling
 with a UNION binding them. */
 --QUERY 7
 
+WITH daily_sales AS (
+	SELECT
+	market_date,
+	SUM(quantity * cost_per_quantity) AS total_sales
+	FROM customer_purchases
+	GROUP BY market_date
+),
+ranked_sales AS (
+	SELECT
+	market_date,
+	total_sales,
+	RANK() OVER (ORDER BY total_sales DESC) AS best_day_rank,
+	RANK() OVER (ORDER BY total_sales ASC) AS worst_day_rank
+	FROM daily_sales
+)
+SELECT 'Highest sales' AS sales_category, market_date,
+ROUND(total_sales, 2) AS total_sales
+FROM ranked_sales
+WHERE best_day_rank = 1
+
+UNION
+
+SELECT 'Lowest sales' AS sales_category, market_date,
+ROUND(total_sales, 2) AS total_sales
+FROM ranked_sales
+WHERE worst_day_rank = 1
+ORDER BY sales_category, market_date;
+
 
 
 
