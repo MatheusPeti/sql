@@ -267,7 +267,16 @@ WHERE p.product_qty_type = 'unit';
 This can be any product you desire (e.g. add another record for Apple Pie). */
 --QUERY 10
 
-
+INSERT INTO product_units
+SELECT
+p.*,
+CURRENT_TIMESTAMP AS snapshot_timestamp
+FROM product AS p
+WHERE p.product_id = (
+	SELECT MIN(product_id)
+	FROM product
+	WHERE product_qty_type = 'unit'
+);
 
 
 --END QUERY
