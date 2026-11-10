@@ -288,7 +288,23 @@ WHERE p.product_id = (
 HINT: If you don't specify a WHERE clause, you are going to have a bad time.*/
 --QUERY 11
 
-
+DELETE FROM product_units
+WHERE product_id = (
+	SELECT MIN(product_id)
+	FROM product
+	WHERE product_qty_type = 'unit'
+)
+AND rowid <> (
+	SELECT pu.rowid
+	FROM product_units AS pu
+	WHERE pu.product_id = (
+		SELECT MIN(product_id)
+		FROM product
+		WHERE product_qty_type = 'unit'
+	)
+	ORDER BY pu.snapshot_timestamp DESC, pu.rowid DESC
+	LIMIT 1
+);
 
 
 --END QUERY
