@@ -77,6 +77,19 @@ DENSE_RANK() OVER (
 FROM customer_purchases AS cp
 ORDER BY cp.customer_id, cp.market_date DESC, cp.product_id;
 
+WITH ranked_visits AS (
+	SELECT
+	cp.*,
+	DENSE_RANK() OVER (
+		PARTITION BY cp.customer_id
+		ORDER BY cp.market_date DESC
+	) AS visit_number
+	FROM customer_purchases AS cp
+)
+SELECT *
+FROM ranked_visits
+WHERE visit_number = 1
+ORDER BY customer_id, product_id;
 
 --END QUERY
 
