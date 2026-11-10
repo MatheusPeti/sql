@@ -218,7 +218,28 @@ How many customers are there (y).
 Before your final group by you should have the product of those two queries (x*y).  */
 --QUERY 8
 
-
+WITH offerings AS (
+	SELECT DISTINCT vendor_id, product_id, original_price
+	FROM vendor_inventory
+),
+customer_offerings AS (
+	SELECT
+	o.vendor_id,
+	o.product_id,
+	o.original_price,
+	c.customer_id
+	FROM offerings AS o
+	CROSS JOIN customer AS c
+)
+SELECT
+v.vendor_name,
+p.product_name,
+ROUND(SUM(5 * co.original_price), 2) AS potential_revenue
+FROM customer_offerings AS co
+JOIN vendor AS v ON v.vendor_id = co.vendor_id
+JOIN product AS p ON p.product_id = co.product_id
+GROUP BY co.vendor_id, v.vendor_name, co.product_id, p.product_name
+ORDER BY v.vendor_name, p.product_name;
 
 
 --END QUERY
