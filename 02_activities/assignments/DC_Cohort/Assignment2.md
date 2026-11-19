@@ -57,7 +57,17 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+Type 1: Overwrite the address
+One row represents the customer's current mailing address
+The primary key (customer_id) links to CUSTOMER
+Other columns include "street", "city", "province", and "postal code"
+When a customer moves we update the existing row with the new address. The precious address is overwritten.
+
+Type 2: retain address history
+One row represents one mailing address during a specific period
+The primary key (address_version_id). A separate customer_id links every version to the same customer.
+Other colums include the same address fields as type 1 plus "valid_from" and "valid_to"
+When a customer moves set "valid_to on the old row and insert a new row with the new address and its "valid_from date. Leave "valid_to" empty for the current address.
 ```
 
 ***
