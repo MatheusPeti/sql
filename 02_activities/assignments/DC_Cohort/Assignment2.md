@@ -202,5 +202,13 @@ Consider, for example, concepts of labour, bias, LLM proliferation, moderating c
 
 
 ```
-Your thoughts...
+
+The discussion about labour, data annotation, and credit is very relevant nowadays. For instance, one of the biggest concerns from society is labour disruption due to automatization of simple tasks like the mentioned data annotation that used to be performed by students and potentially represented an important source of income for this demographic. There has recently been a major expansion of data annotation platforms like Mercor and DataAnnotation Tech that provide much higher compensation to specialists in a field, who teach new AI models their own workflows - which will inevitably lead to their own replacement. Furthermore, in an unstoppable search for data meant for model training, AI companies are training their models with data behind firewalls that are not publicaly available. If AI is trained on a novel and then is capable of writing the next edition of the collection with the same style as the original author and it all happened without the author's authorization, shouldn't the author receive credit and compensation for the new work? How is that not plagiarism.
+
+However, this technology can be great for augmenting jobs by replacing the repetitive tasks, while letting people focus on the most challenging parts of the jobs that cannot be automated (yet). Potentially it can have greatest impact at developing and remote communoties, by making knowledge more accessible and the abilities of high skilled workers available and reproducible anywhere in the world.
+
+It is also important to consider the inherit bias that comes with the data that those models were trained on, which will persist until verified and manually removed.
+
+
+
 ```
